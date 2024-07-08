@@ -1,5 +1,5 @@
                                 ///////////ADMINISTRAR PRODUCTOS DE LA TIENDA///////////
-//Declaracion de productos
+//Declaracion de productos y lista de productos
 class Producto {
     constructor(id,nombre,precio,detalles,stock) {
         this.id = id;
@@ -108,6 +108,7 @@ function validarEntradas(tipo) {
             return entrada;
     }
 }
+
 //Funcion para agregar productos
 function agregarProducto() {
     let productoNombre = validarEntradas('string');
@@ -122,11 +123,13 @@ function agregarProducto() {
     return alert('Producto agregado!');
 }
 
+//Funcion para vender productos
 function venderProducto() {
     let productoVender = validarEntradas('el id');
     listaProductos.venderUnidad(parseInt(productoVender));
 }
 
+//Funcion para borrar productos
 function borrarProducto() {
     let producto;
     do {
@@ -165,6 +168,7 @@ function menuOperaciones(opcion) {
     consultaOp();
 }
 
+//Consultar operacion
 let consultaOp = () => {
     let op;
     do {
